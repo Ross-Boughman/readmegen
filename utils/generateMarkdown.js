@@ -106,7 +106,7 @@ function generateMarkdown(data) {
     tableOfCont += `
     * [Tests](#tests)`;
   }
-  const Markdown = `# ${data.title}
+  let Markdown = `# ${data.title}
     
     ## Description 
     

@@ -19,7 +19,7 @@ const questions = [
   },
   {
     type: "input",
-    message: "Give a brief description of your projet.",
+    message: "Give a brief description of your project.",
     name: "description",
     default: "Description",
     validate: function (answer) {
@@ -101,23 +101,22 @@ function writeToFile(fileName, data) {
     console.log("Success!");
   });
 }
-writeToFile();
 
 const writeFileAsync = util.promisify(writeToFile);
 
 async function init() {
   try {
-    const userResponses = await inquirer.prompt(questions);
+    let userResponses = await inquirer.prompt(questions);
     console.log("Your responses: ", userResponses);
     console.log(
       "Thank you for your responses! Getting GitHub data..."
     );
 
-    const userInfo = await api.getUser(userResponses);
+    let userInfo = await api.getUser(userResponses);
     console.log("Your GitHub user info: ", userInfo);
 
     console.log("Generating your README...");
-    const markdown = generateMarkdown(userResponses, userInfo);
+    let markdown = generateMarkdown(userResponses, userInfo);
     console.log(markdown);
 
     await writeFileAsync(fileName, markdown);
