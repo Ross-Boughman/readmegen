@@ -110,13 +110,13 @@ async function init() {
     const userResponses = await inquirer.prompt(questions);
     console.log("Your responses: ", userResponses);
     console.log(
-      "Thank you for your responses! Fetching your GitHub data next..."
+      "Thank you for your responses! Getting GitHub data..."
     );
 
     const userInfo = await api.getUser(userResponses);
     console.log("Your GitHub user info: ", userInfo);
 
-    console.log("Generating your README next...");
+    console.log("Generating your README...");
     const markdown = generateMarkdown(userResponses, userInfo);
     console.log(markdown);
 
