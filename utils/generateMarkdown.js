@@ -89,24 +89,25 @@ function generateMarkdown(data) {
 
   if (data.installation !== "") {
     tableOfCont += `
-    * [Installation](#installation)`;
+    * Installation`;
   }
 
   if (data.usage !== "") {
     tableOfCont += `
-    * [Usage](#usage)`;
+    * Usage`;
   }
 
   if (data.contributing !== "") {
     tableOfCont += `
-    * [Contributing](#contributing)`;
+    * Contributing`;
   }
 
   if (data.tests !== "") {
     tableOfCont += `
-    * [Tests](#tests)`;
+    * Tests`;
   }
-  let Markdown = `# ${data.title}
+  let Markdown = `
+    ## ${data.title}
     
     ## Description 
     
@@ -118,7 +119,7 @@ function generateMarkdown(data) {
 
 
   Markdown += `
-    * [License](#license)`;
+    * License`;
 
   if (data.install !== "") {
     Markdown += `

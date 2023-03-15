@@ -119,6 +119,7 @@ async function init() {
     let markdown = generateMarkdown(userResponses, userInfo);
     console.log(markdown);
 
+    const fileName = "READMEgen.md";
     await writeFileAsync(fileName, markdown);
   } catch (error) {
     console.log(error);
